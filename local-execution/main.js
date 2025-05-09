@@ -15,6 +15,8 @@ dagre.layout(g1to4, null, g1to3);
 let g1to7 = initGraph(v.variant1to7);
 dagre.layout(g1to7, null, g1to4);
 
+dagre.layout(g1to7); //uses last layout as oldGraph
+dagre.layout(g1to7, null, null); //ignores oldGraph
 visualizeGraph(g1to7, false);
 
 //ToDo:
