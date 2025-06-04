@@ -4,19 +4,17 @@ import * as v from "./graphVariants.js";
 
 // this includes exactly the target process
 let g1to2 = initGraph(v.variant1to2);
-//dagre.layout(g1to2);
+dagre.layout(g1to2);
 //visualizeGraph(g1to2, false);
 
 let g1to3 = initGraph(v.variant1to3);
 //dagre.layout(g1to3);
 //
 let g1to4 = initGraph(v.variant1to4);
-// dagre.layout(g1to4, null, g1to3);
+//dagre.layout(g1to4, null, g1to3);
 //
 let g1to7 = initGraph(v.variant1to7);
-dagre.layout(g1to7, null, g1to4);
-//
-// dagre.layout(g1to7); //uses last layout as oldGraph
+dagre.layout(g1to7); //uses last layout as oldGraph
 // dagre.layout(g1to7, null, null); //ignores oldGraph
 visualizeGraph(g1to7, false);
 
