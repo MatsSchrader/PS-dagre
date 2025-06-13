@@ -18,12 +18,6 @@ dagre.layout(g1to7); //uses last layout as oldGraph
 // dagre.layout(g1to7, null, null); //ignores oldGraph
 visualizeGraph(g1to7, false);
 
-//ToDo:
-// 	- get more Graphs to test
-// 	- make it easier to load different Graphs/variants: look overleaf, custom jointjs directed layout
-// 	- zoom Meeting with Supervisor for more data and Show current results
-// 	- collect opinions on new layout
-
 
 function initGraph(variant) {
 // Create a new directed graph
