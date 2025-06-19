@@ -24,6 +24,9 @@ visualizeGraph(g1to7, false);
 //  - maybe just call layout with 1to20 as oldGraph parameter
 
 
+//TODO:
+// end-start immer auf genau einer höhe
+// scheiß auf überschneidungen, hauptsache kern in der Mitte
 function initGraph(variant) {
 // Create a new directed graph
   let g = new dagre.graphlib.Graph();
