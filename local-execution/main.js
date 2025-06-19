@@ -19,10 +19,9 @@ dagre.layout(g1to7); //uses last layout as oldGraph
 visualizeGraph(g1to7, false);
 
 //ToDo:
-// 	- get more Graphs to test
-// 	- make it easier to load different Graphs/variants: look overleaf, custom jointjs directed layout
-// 	- zoom Meeting with Supervisor for more data and Show current results
-// 	- collect opinions on new layout
+// 	- offline approach?
+//  - maybe calc 1-20 layout and save layering/positions and add new elements according to that - still need a good layout for 1-20
+//  - maybe just call layout with 1to20 as oldGraph parameter
 
 
 function initGraph(variant) {
