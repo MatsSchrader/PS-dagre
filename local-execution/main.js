@@ -20,7 +20,7 @@ visualizeGraph(g1to7, false);
 
 //TODO:
 // end-start immer auf genau einer höhe
-// scheiß auf überschneidungen, hauptsache kern in der Mitte
+// paperScroller.positionElement() mit Start node könnte klappen
 function initGraph(variant) {
 // Create a new directed graph
   let g = new dagre.graphlib.Graph();
