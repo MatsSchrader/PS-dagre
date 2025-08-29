@@ -2,45 +2,51 @@ import * as dagre from 'dagre';
 import * as d3 from 'd3';
 import * as v from "./graphVariants.js";
 
+
+const prep = initGraph(v.prepAcyclic);
+const trigger = initGraph(v.triggerAcyclic);
+
+
+dagre.layout(trigger);
+visualizeGraph(trigger, false);
+
+
+function initGraph(variant) {
 // Create a new directed graph
-const g = new dagre.graphlib.Graph();
+  let g = new dagre.graphlib.Graph();
 
-// Set an object for the graph label
-g.setGraph({
-  rankdir: 'LR',
-  nodesep: 50,
-  edgesep: 10,
-  ranksep: 75,
-});
-
-// Default to assigning a new object as a label for each new edge.
-g.setDefaultEdgeLabel(() => ({}));
-
-// change variant to what I want to test
-const variant = v.variant1to4;
-
-// Add nodes to the graph
-variant.nodes.forEach(node => {
-  g.setNode(node.id, {
-    label: node.label,
-    width: node.width,
-    height: node.height
+  // Set an object for the graph label
+  g.setGraph({
+    rankdir: 'TB',
+    nodesep: 50,
+    edgesep: 10,
+    ranksep: 75,
+    //align: 'UL',
   });
-});
 
-// Add edges to the graph
-variant.edges.forEach((edge, i) => {
-  g.setEdge(edge.source, edge.target, {
-    weight: edge.weight || 1,
-    minlen: 1, // Default minimum length
-    id: `e${i}`  // Generate a unique ID for each edge
+  // Default to assigning a new object as a label for each new edge.
+  g.setDefaultEdgeLabel(() => ({}));
+
+
+  // Add nodes to the graph
+  variant.nodes.forEach(node => {
+    g.setNode(node.id, {
+      label: node.label,
+      width: node.width,
+      height: node.height
+    });
   });
-});
 
-// Calculate layout (this assigns positions to nodes)
-dagre.layout(g);
-
-visualizeGraph(g, false);
+  // Add edges to the graph
+  variant.edges.forEach((edge, i) => {
+    g.setEdge(edge.source, edge.target, {
+      weight: edge.weight || 1,
+      minlen: 1, // Default minimum length
+      id: `e${i}`  // Generate a unique ID for each edge
+    });
+  });
+  return g;
+}
 
 function visualizeGraph(g, log) {
   if (log) {

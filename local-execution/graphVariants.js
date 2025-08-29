@@ -165,3 +165,44 @@ export const variant1to7 = {
   ],
 };
 
+export const prepAcyclic = {
+  nodes: [
+    { id: "A", width: 40, height: 40, label: "A" },
+    { id: "C", width: 40, height: 40, label: "C" },
+    { id: "Start", width: 40, height: 40, label: "Start" },
+    { id: "End", width: 40, height: 40, label: "End" },
+    { id: "B", width: 40, height: 40, label: "B" },
+  ],
+
+  edges: [
+    { source: "A", target: "C", weight: 1, id: "eAC" },
+    { source: "Start", target: "A", weight: 1, id: "eStartA" },
+    { source: "B", target: "C", weight: 1, id: "eBC" },
+    { source: "C", target: "End", weight: 1, id: "eBEnd" },
+    { source: "A", target: "B", weight: 1, id: "eAB" },
+  ]
+};
+
+export const triggerAcyclic = {
+  nodes: [
+    { id: "D", width: 40, height: 40, label: "D" },
+    { id: "E", width: 40, height: 40, label: "E" },
+    { id: "A", width: 40, height: 40, label: "A" },
+    { id: "C", width: 40, height: 40, label: "C" },
+    { id: "Start", width: 40, height: 40, label: "Start" },
+    { id: "End", width: 40, height: 40, label: "End" },
+    { id: "B", width: 40, height: 40, label: "B" },
+  ],
+
+  edges: [
+    { source: "D", target: "E", weight: 1, id: "eDE" },
+    { source: "A", target: "D", weight: 1, id: "eAD" },
+    { source: "A", target: "C", weight: 1, id: "eAC" },
+    { source: "C", target: "B", weight: 1, id: "eCB" },
+    { source: "E", target: "A", weight: 1, id: "eEA" },
+    { source: "Start", target: "A", weight: 1, id: "eStartA" },
+    { source: "B", target: "C", weight: 1, id: "eBC" },
+    { source: "C", target: "End", weight: 1, id: "eBEnd" },
+    { source: "A", target: "B", weight: 1, id: "eAB" },
+  ]
+};
