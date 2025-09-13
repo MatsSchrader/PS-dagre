@@ -165,3 +165,165 @@ export const variant1to7 = {
   ],
 };
 
+export const prepAcyclic = {
+  nodes: [
+    { id: "A", width: 40, height: 40, label: "A" },
+    { id: "C", width: 40, height: 40, label: "C" },
+    { id: "Start", width: 40, height: 40, label: "Start" },
+    { id: "End", width: 40, height: 40, label: "End" },
+    { id: "B", width: 40, height: 40, label: "B" },
+  ],
+
+  edges: [
+    { source: "A", target: "C", weight: 1},
+    { source: "Start", target: "A", weight: 1},
+    { source: "B", target: "C", weight: 1},
+    { source: "C", target: "End", weight: 1},
+    { source: "A", target: "B", weight: 1},
+  ]
+};
+
+export const triggerAcyclic = {
+  nodes: [
+    { id: "D", width: 40, height: 40, label: "D" },
+    { id: "E", width: 40, height: 40, label: "E" },
+    { id: "A", width: 40, height: 40, label: "A" },
+    { id: "C", width: 40, height: 40, label: "C" },
+    { id: "Start", width: 40, height: 40, label: "Start" },
+    { id: "End", width: 40, height: 40, label: "End" },
+    { id: "B", width: 40, height: 40, label: "B" },
+  ],
+
+  edges: [
+    { source: "D", target: "E", weight: 1},
+    { source: "A", target: "D", weight: 1},
+    { source: "A", target: "C", weight: 1},
+    { source: "C", target: "B", weight: 1},
+    { source: "E", target: "A", weight: 1 },
+    { source: "Start", target: "A", weight: 1 },
+    { source: "B", target: "C", weight: 1 },
+    { source: "C", target: "End", weight: 1 },
+    { source: "A", target: "B", weight: 1 },
+  ]
+};
+
+export const breakDynamicReverse = {
+  nodes: [
+    { id: "D", width: 40, height: 40, label: "D" },
+    { id: "E", width: 40, height: 40, label: "E" },
+    { id: "A", width: 40, height: 40, label: "A" },
+    { id: "C", width: 40, height: 40, label: "C" },
+    { id: "Start", width: 40, height: 40, label: "Start" },
+    { id: "End", width: 40, height: 40, label: "End" },
+    { id: "B", width: 40, height: 40, label: "B" },
+  ],
+
+  edges: [
+    { source: "D", target: "E", weight: 1 },
+    //{ source: "A", target: "D", weight: 1 },
+    { source: "A", target: "C", weight: 1 },
+    { source: "C", target: "B", weight: 1 },
+    { source: "E", target: "A", weight: 1 },
+    { source: "Start", target: "A", weight: 1 },
+    { source: "B", target: "C", weight: 1 },
+    { source: "E", target: "End", weight: 1 },
+    { source: "A", target: "B", weight: 1 },
+    { source: "C", target: "D", weight: 1 },
+  ]
+};
+
+export const displayBias = {
+  nodes: [
+    { id: "Start", width: 40, height: 40, label: "Start" },
+    { id: "A", width: 40, height: 40, label: "A" },
+    { id: "B", width: 40, height: 40, label: "B" },
+    { id: "C", width: 40, height: 40, label: "C" },
+    { id: "D", width: 40, height: 40, label: "D" },
+    { id: "End", width: 40, height: 40, label: "End" },
+  ],
+
+  edges: [
+    { source: "Start", target: "A", weight: 1 },
+    { source: "Start", target: "C", weight: 1 },
+    { source: "A", target: "C", weight: 1 },
+    { source: "A", target: "B", weight: 1 },
+    { source: "A", target: "End", weight: 1 },
+    { source: "B", target: "D", weight: 1 },
+    { source: "C", target: "D", weight: 1 },
+    { source: "D", target: "End", weight: 1 },
+  ]
+};
+
+
+export const edgeGrouping = {
+  nodes: [
+    { id: "B", width: 40, height: 40, label: "B" },
+    { id: "Start", width: 40, height: 40, label: "Start" },
+    { id: "A", width: 40, height: 40, label: "A" },
+    { id: "End", width: 40, height: 40, label: "End" },
+  ],
+
+  edges: [
+    { source: "B", target: "A", weight: 1 },
+    { source: "Start", target: "A", weight: 1 },
+    { source: "Start", target: "B", weight: 1 },
+    { source: "A", target: "B", weight: 1 },
+    { source: "A", target: "End", weight: 1 },
+    { source: "B", target: "End", weight: 1 },
+  ]
+};
+
+export const dynamicOrderPrep = {
+  nodes: [
+    { id: "B", width: 40, height: 40, label: "B" },
+    { id: "Start", width: 40, height: 40, label: "Start" },
+    { id: "A", width: 40, height: 40, label: "A" },
+    { id: "End", width: 40, height: 40, label: "End" },
+    { id: "C", width: 40, height: 40, label: "C" },
+  ],
+
+  edges: [
+    { source: "B", target: "A", weight: 1 },
+    { source: "Start", target: "A", weight: 1 },
+    { source: "Start", target: "B", weight: 1 },
+    { source: "A", target: "B", weight: 1 },
+    { source: "A", target: "C", weight: 1 },
+    { source: "B", target: "C", weight: 1 },
+    { source: "C", target: "End", weight: 1 },
+  ]
+};
+
+export const dynamicOrderTrigger = {
+  nodes: [
+    { id: "B", width: 40, height: 40, label: "B" },
+    { id: "Start", width: 40, height: 40, label: "Start" },
+    { id: "A", width: 40, height: 40, label: "A" },
+    { id: "End", width: 40, height: 40, label: "End" },
+    { id: "C", width: 40, height: 40, label: "C" },
+  ],
+
+  edges: [
+    { source: "B", target: "A", weight: 1 },
+    { source: "Start", target: "A", weight: 1 },
+    { source: "Start", target: "B", weight: 1 },
+    { source: "A", target: "B", weight: 1 },
+    { source: "A", target: "C", weight: 1 },
+    { source: "B", target: "C", weight: 1 },
+    { source: "C", target: "End", weight: 1 },
+    { source: "A", target: "End", weight: 1 },
+  ]
+};
+
+export const alignTypeZero = {
+  nodes: [
+    { id: "A", width: 40, height: 40, label: "W" },
+    { id: "B", width: 40, height: 40, label: "W_r" },
+    { id: "C", width: 40, height: 40, label: "C" },
+    { id: "D", width: 40, height: 40, label: "D" },
+  ],
+
+  edges: [
+    { source: "A", target: "C", weight: 1 },
+    { source: "B", target: "D", weight: 1 },
+  ]
+};

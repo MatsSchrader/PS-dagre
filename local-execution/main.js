@@ -2,22 +2,51 @@ import * as dagre from 'dagre';
 import * as d3 from 'd3';
 import * as v from "./graphVariants.js";
 
-// this includes exactly the target process
-let g1to2 = initGraph(v.variant1to2);
-dagre.layout(g1to2);
-//visualizeGraph(g1to2, false);
-
-let g1to3 = initGraph(v.variant1to3);
-//dagre.layout(g1to3);
+// // this includes exactly the target process
+// let g1to2 = initGraph(v.variant1to2);
+// dagre.layout(g1to2);
+// //visualizeGraph(g1to2, false);
 //
-let g1to4 = initGraph(v.variant1to4);
-//dagre.layout(g1to4, null, g1to3);
-//
-let g1to7 = initGraph(v.variant1to7);
-dagre.layout(g1to7); //uses last layout as oldGraph
-// dagre.layout(g1to7, null, null); //ignores oldGraph
-visualizeGraph(g1to7, false);
+// let g1to3 = initGraph(v.variant1to3);
+// //dagre.layout(g1to3);
+// //
+// let g1to4 = initGraph(v.variant1to4);
+// //dagre.layout(g1to4, null, g1to3);
+// //
+// let g1to7 = initGraph(v.variant1to7);
+// dagre.layout(g1to7); //uses last layout as oldGraph
+// // dagre.layout(g1to7, null, null); //ignores oldGraph
+// visualizeGraph(g1to7, false);
 
+// let prep = initGraph(v.prepAcyclic);
+// let trigger = initGraph(v.triggerAcyclic);
+// //let breakR = initGraph(v.breakDynamicReverse);
+// dagre.layout(prep);
+// dagre.layout(trigger);
+// // dagre.layout(breakR);
+// visualizeGraph(prep, false);
+// visualizeGraph(trigger, false);
+//visualizeGraph(breakR, false);
+
+// let bias = initGraph(v.displayBias);
+// dagre.layout(bias);
+// visualizeGraph(bias, false);
+
+// let group = initGraph(v.edgeGrouping);
+// dagre.layout(group);
+// visualizeGraph(group, false);
+
+// let dynamicOrderPrep = initGraph(v.dynamicOrderPrep);
+// let dynamicOrderTrigger = initGraph(v.dynamicOrderTrigger);
+// dagre.layout(dynamicOrderPrep);
+// dagre.layout(dynamicOrderTrigger);
+// //visualizeGraph(dynamicOrderPrep, false);
+// visualizeGraph(dynamicOrderTrigger, false);
+
+
+let align0 = initGraph(v.alignTypeZero);
+dagre.layout(align0);
+visualizeGraph(align0, false);
 
 function initGraph(variant) {
 // Create a new directed graph
@@ -25,11 +54,11 @@ function initGraph(variant) {
 
   // Set an object for the graph label
   g.setGraph({
-    rankdir: 'LR',
+    rankdir: 'TB',
     nodesep: 50,
-    edgesep: 10,
+    edgesep: 20,
     ranksep: 75,
-    //align: 'UL',
+    //align: 'UR',
   });
 
   // Default to assigning a new object as a label for each new edge.
